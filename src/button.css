@@ -39,6 +39,123 @@
   height: 60;
   font-size: 40px;
   position: absolute;
-  left: 200px;
+  left: 210px;
   top: 415px;
+}
+
+#reset {
+  width: 160px;
+  height: 60;
+  font-size: 40px;
+  position: absolute;
+  left: 30px;
+  top: 140px;
+}
+
+#delete {
+  width: 70px;
+  height: 50px;
+  font-size: 30px;
+  position: absolute;
+  left: 210px;
+  top: 140px;
+}
+
+#dot {
+  width: 70px;
+  height: 60;
+  font-size: 40px;
+  position: absolute;
+  left: 120px;
+  top: 415px;
+}
+
+#zero {
+  width: 70px;
+  height: 60;
+  font-size: 40px;
+  position: absolute;
+  left: 30px;
+  top: 415px;
+}
+
+#one {
+  width: 70px;
+  height: 60;
+  font-size: 40px;
+  position: absolute;
+  left: 30px;
+  top: 340px;
+}
+
+#two {
+  width: 70px;
+  height: 60;
+  font-size: 40px;
+  position: absolute;
+  left: 120px;
+  top: 340px;
+}
+
+#three {
+  width: 70px;
+  height: 60;
+  font-size: 40px;
+  position: absolute;
+  left: 210px;
+  top: 340px;
+}
+
+#four {
+  width: 70px;
+  height: 60;
+  font-size: 40px;
+  position: absolute;
+  left: 30px;
+  top: 270px;
+}
+
+#five {
+  width: 70px;
+  height: 60;
+  font-size: 40px;
+  position: absolute;
+  left: 120px;
+  top: 270px;
+}
+
+#six {
+  width: 70px;
+  height: 60;
+  font-size: 40px;
+  position: absolute;
+  left: 210px;
+  top: 270px;
+}
+
+#seven {
+  width: 70px;
+  height: 60;
+  font-size: 40px;
+  position: absolute;
+  left: 30px;
+  top: 200px;
+}
+
+#eight {
+  width: 70px;
+  height: 60;
+  font-size: 40px;
+  position: absolute;
+  left: 120px;
+  top: 200px;
+}
+
+#nine {
+  width: 70px;
+  height: 60;
+  font-size: 40px;
+  position: absolute;
+  left: 210px;
+  top: 200px;
 }

@@ -1,0 +1,9 @@
+#result {
+  width: 340px;
+  height: 70px;
+  font-size: 30px;
+  position: absolute;
+  left: 30px;
+  top: 40px;
+  text-align: right;
+}

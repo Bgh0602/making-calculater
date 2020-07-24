@@ -1,6 +1,7 @@
 import React from "react";
 import Canvas from "./canvas";
 import Button from "./button";
+import Result from "./result";
 import "./canvas.css";
 
 class App extends React.Component {
@@ -9,6 +10,7 @@ class App extends React.Component {
       <>
         <Canvas />
         <Button></Button>
+        <Result></Result>
       </>
     );
   }
