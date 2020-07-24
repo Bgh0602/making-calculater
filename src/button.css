@@ -1,0 +1,44 @@
+#plus {
+  width: 70px;
+  height: 140px;
+  font-size: 40px;
+  position: absolute;
+  left: 300px;
+  top: 330px;
+}
+
+#minus {
+  width: 70px;
+  height: 60px;
+  font-size: 40px;
+  position: absolute;
+  left: 300px;
+  top: 260px;
+}
+
+#muliplication {
+  width: 70px;
+  height: 60;
+  font-size: 40px;
+  position: absolute;
+  left: 300px;
+  top: 200px;
+}
+
+#division {
+  width: 70px;
+  height: 60;
+  font-size: 40px;
+  position: absolute;
+  left: 300px;
+  top: 140px;
+}
+
+#equality {
+  width: 70px;
+  height: 60;
+  font-size: 40px;
+  position: absolute;
+  left: 200px;
+  top: 415px;
+}
