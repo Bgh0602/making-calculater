@@ -1,5 +1,5 @@
 import React from "react";
-import "./button.css";
+import "./Button.css";
 
 class Button extends React.Component {
   constructor(props) {
@@ -10,7 +10,6 @@ class Button extends React.Component {
       { id: "muliplication", value: "*" },
       { id: "division", value: "/" },
       { id: "equality", value: "=" },
-      { id: "reset", value: "A.C" },
       { id: "delete", value: "DEL" },
       { id: "dot", value: "." },
     ];
@@ -29,38 +28,65 @@ class Button extends React.Component {
   }
 
   render() {
-    var i = 0;
-    var lists = [];
-    var calculation = this.calculationList;
+    let i = 0;
+    let signList = [];
+    let calculationList = this.calculationList;
 
-    var n = 0;
-    var List = [];
-    var numberList = this.numberList;
-    while (i < calculation.length) {
-      lists.push(
+    let n = 0;
+    let figureList = [];
+    let numberList = this.numberList;
+    while (i < calculationList.length) {
+      signList.push(
         <input
-          id={calculation[i].id}
+          id={calculationList[i].id}
           type="button"
-          value={calculation[i].value}
+          value={calculationList[i].value}
+          onClick={() => {}}
         />
       );
       i += 1;
     }
 
     while (n < 10) {
-      List.push(
+      figureList.push(
         <input
           id={numberList[n].id}
           type="button"
           value={n}
-          onClick={() => {}}
+          onClick={(e) => {
+            let input = 0;
+            if (numberList[0].id === "zero") {
+              input = 0;
+            } else if (numberList[1].id === "one") {
+              input = 1;
+            } else if (numberList[2].id === "two") {
+              input = 2;
+            } else if (numberList[3].id === "three") {
+              input = 3;
+            } else if (numberList[4].id === "four") {
+              input = 4;
+            } else if (numberList[5].id === "five") {
+              input = 5;
+            } else if (numberList[6].id === "six") {
+              input = 6;
+            } else if (numberList[7].id === "seven") {
+              input = 7;
+            } else if (numberList[8].id === "eight") {
+              input = 8;
+            } else if (numberList[9].id === "nine") {
+              input = 9;
+            }
+            e.preventDefault();
+            return input;
+          }}
         />
       );
       n += 1;
     }
     return (
       <div>
-        {lists} {List}
+        {signList}
+        {figureList}
       </div>
     );
   }
