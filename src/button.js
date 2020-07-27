@@ -28,6 +28,7 @@ class Button extends React.Component {
   }
 
   render() {
+    const setValue = this.props.setValue;
     let i = 0;
     let signList = [];
     let calculationList = this.calculationList;
@@ -47,38 +48,31 @@ class Button extends React.Component {
       i += 1;
     }
 
+    const onClickFigure = (e) => {
+      let input = {
+        zero: "0",
+        one: "1",
+        two: "2",
+        three: "3",
+        four: "4",
+        five: "5",
+        six: "6",
+        seven: "7",
+        eight: "8",
+        nine: "9",
+      }[e.target.id];
+
+      e.preventDefault();
+      setValue(input);
+    };
+
     while (n < 10) {
       figureList.push(
         <input
           id={numberList[n].id}
           type="button"
           value={n}
-          onClick={(e) => {
-            let input = 0;
-            if (numberList[0].id === "zero") {
-              input = 0;
-            } else if (numberList[1].id === "one") {
-              input = 1;
-            } else if (numberList[2].id === "two") {
-              input = 2;
-            } else if (numberList[3].id === "three") {
-              input = 3;
-            } else if (numberList[4].id === "four") {
-              input = 4;
-            } else if (numberList[5].id === "five") {
-              input = 5;
-            } else if (numberList[6].id === "six") {
-              input = 6;
-            } else if (numberList[7].id === "seven") {
-              input = 7;
-            } else if (numberList[8].id === "eight") {
-              input = 8;
-            } else if (numberList[9].id === "nine") {
-              input = 9;
-            }
-            e.preventDefault();
-            return input;
-          }}
+          onClick={onClickFigure}
         />
       );
       n += 1;

@@ -5,12 +5,23 @@ import Result from "./Result";
 import "./Canvas.css";
 
 class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      value: "",
+    };
+  }
+
   render() {
+    const value = this.state.value;
+
     return (
       <>
         <Canvas />
-        <Button></Button>
-        <Result value="hi"></Result>
+        <Button
+          setValue={(newValue) => this.setState({ value: value + newValue })}
+        />
+        <Result value={value} />
       </>
     );
   }

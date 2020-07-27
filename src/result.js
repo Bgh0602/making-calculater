@@ -5,10 +5,10 @@ import "./Button.css";
 class Result extends React.Component {
   render() {
     return (
-      <form>
+      <div>
         <input id="result" type="text" value={this.props.value}></input>
-        <input id="reset" type="reset" value="A.C"></input>
-      </form>
+        <input id="reset" type="button" value="A.C"></input>
+      </div>
     );
   }
 }
