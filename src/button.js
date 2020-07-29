@@ -4,15 +4,6 @@ import "./Button.css";
 class Button extends React.Component {
   constructor(props) {
     super(props);
-    this.calculationList = [
-      { id: "plus", value: "+" },
-      { id: "minus", value: "-" },
-      { id: "muliplication", value: "*" },
-      { id: "division", value: "/" },
-      { id: "equality", value: "=" },
-      { id: "delete", value: "DEL" },
-      { id: "dot", value: "." },
-    ];
     this.numberList = [
       { id: "zero" },
       { id: "one" },
@@ -25,10 +16,20 @@ class Button extends React.Component {
       { id: "eight" },
       { id: "nine" },
     ];
+    this.calculationList = [
+      { id: "plus", value: "+" },
+      { id: "minus", value: "-" },
+      { id: "muliplication", value: "*" },
+      { id: "division", value: "/" },
+      { id: "equality", value: "=" },
+    ];
   }
 
   render() {
     const setValue = this.props.setValue;
+    const value = this.props.value;
+
+    console.log({ value, setValue });
     let i = 0;
     let signList = [];
     let calculationList = this.calculationList;
@@ -36,17 +37,6 @@ class Button extends React.Component {
     let n = 0;
     let figureList = [];
     let numberList = this.numberList;
-    while (i < calculationList.length) {
-      signList.push(
-        <input
-          id={calculationList[i].id}
-          type="button"
-          value={calculationList[i].value}
-          onClick={() => {}}
-        />
-      );
-      i += 1;
-    }
 
     const onClickFigure = (e) => {
       let input = {
@@ -63,7 +53,7 @@ class Button extends React.Component {
       }[e.target.id];
 
       e.preventDefault();
-      setValue(input);
+      setValue(input, "");
     };
 
     while (n < 10) {
@@ -77,6 +67,29 @@ class Button extends React.Component {
       );
       n += 1;
     }
+    const onClickSign = (e) => {
+      let sign = {
+        plus: "+",
+        minus: "-",
+        muliplication: "*",
+        division: "/",
+      }[e.target.id];
+
+      e.preventDefault();
+      setValue("", sign);
+    };
+    while (i < calculationList.length) {
+      signList.push(
+        <input
+          id={calculationList[i].id}
+          type="button"
+          value={calculationList[i].value}
+          onClick={onClickSign}
+        />
+      );
+      i += 1;
+    }
+
     return (
       <div>
         {signList}

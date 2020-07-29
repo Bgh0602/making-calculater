@@ -4,6 +4,10 @@ import Button from "./Button";
 import Result from "./Result";
 import "./Canvas.css";
 
+function calculate(statement) {
+  return eval(statement);
+}
+
 class App extends React.Component {
   constructor() {
     super();
@@ -19,9 +23,17 @@ class App extends React.Component {
       <>
         <Canvas />
         <Button
-          setValue={(newValue) => this.setState({ value: value + newValue })}
+          setValue={(newValue, newSign) =>
+            this.setState({ value: value + newSign + newValue })
+          }
         />
-        <Result value={value} />
+        <Result
+          onClickReset={() => this.setState({ value: "" })}
+          onClickDelete={() => this.setState({ value: value.slice(0, -1) })}
+          onClickDot={() => this.setState({ value: value + "." })}
+          onClickEquality={() => this.setState({ value: calculate(value) })}
+          value={value}
+        />
       </>
     );
   }
