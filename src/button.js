@@ -1,5 +1,6 @@
 import React from "react";
 import "./Button.css";
+import Result from "./Result";
 
 class Button extends React.Component {
   constructor(props) {
@@ -27,9 +28,9 @@ class Button extends React.Component {
 
   render() {
     const setValue = this.props.setValue;
-    const value = this.props.value;
+    const setSign = this.props.setSign;
+    const setResult = this.props.setResult;
 
-    console.log({ value, setValue });
     let i = 0;
     let signList = [];
     let calculationList = this.calculationList;
@@ -53,7 +54,7 @@ class Button extends React.Component {
       }[e.target.id];
 
       e.preventDefault();
-      setValue(input, "");
+      setValue(input);
     };
 
     while (n < 10) {
@@ -67,6 +68,7 @@ class Button extends React.Component {
       );
       n += 1;
     }
+
     const onClickSign = (e) => {
       let sign = {
         plus: "+",
@@ -76,7 +78,8 @@ class Button extends React.Component {
       }[e.target.id];
 
       e.preventDefault();
-      setValue("", sign);
+      setSign(sign);
+      setResult();
     };
     while (i < calculationList.length) {
       signList.push(

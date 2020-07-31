@@ -6,7 +6,7 @@ class Result extends React.Component {
   render() {
     return (
       <div>
-        <input id="result" type="text" value={this.props.value}></input>
+        <input id="result" type="text" value={this.props.result}></input>
         <input
           id="reset"
           type="button"

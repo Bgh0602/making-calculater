@@ -12,27 +12,35 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
+      result: "",
       value: "",
     };
   }
 
   render() {
-    const value = this.state.value;
+    let value = this.state.value;
+    let result = this.state.result;
+    console.log("result : ", result);
+    console.log("value :", value);
 
     return (
       <>
         <Canvas />
         <Button
-          setValue={(newValue, newSign) =>
-            this.setState({ value: value + newSign + newValue })
-          }
+          setValue={(newValue) => this.setState({ result: result + newValue })}
+          setSign={(newSign) => this.setState({ value: result + newSign })}
+          setResult={() => this.setState({ result: "" })}
         />
         <Result
-          onClickReset={() => this.setState({ value: "" })}
-          onClickDelete={() => this.setState({ value: value.slice(0, -1) })}
-          onClickDot={() => this.setState({ value: value + "." })}
-          onClickEquality={() => this.setState({ value: calculate(value) })}
-          value={value}
+          onClickDot={() => this.setState({ result: result + "." })}
+          onClickEquality={() =>
+            this.setState({ result: calculate(value + result) })
+          }
+          result={result}
+          onClickReset={() => this.setState({ result: "", value: "" })}
+          onClickDelete={() =>
+            this.setState({ result: String(result).slice(0, -1) })
+          }
         />
       </>
     );
